@@ -12,8 +12,8 @@ public class EjemplosStreamFilterSingle2 {
                 .of("Ana Gomez","Juan Pinto","Maira Guzman","Sara Estrada","Ana Fernandez")
                 .map(nombre -> new Usuario(nombre.split(" ")[0],nombre.split(" ")[1]))
                 .peek(System.out::println)
-                .filter(u ->u.getId().equals(2))
-                .findFirst().get();
+                .filter(u ->u.getId().equals(3))
+                .findFirst().orElseGet(()->new Usuario("Pilar","Estrada"));
 
         System.out.println(usuario);
 
